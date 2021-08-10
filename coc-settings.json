@@ -1,0 +1,153 @@
+{
+    "suggest.triggerAfterInsertEnter": false,
+    "suggest.timeout": 500,
+    "suggest.noselect": false,
+    "suggest.detailField":"abbr",
+    "suggest.snippetIndicator": "🧃",
+    "suggest.triggerCompletionWait": 100,
+    "suggest.echodocSupport": true,
+    "suggest.completionItemKindLabels": {
+        "keyword": "\uf1de",
+        "variable": "\ue79b",
+        "value": "\uf89f",
+        "operator": "\u03a8",
+        "function": "\u2A15",
+        "reference": "\ufa46",
+        "constant": "\uf8fe",
+        "method": "\uf09a",
+        "struct": "\ufb44",
+        "class": "\uf0e8",
+        "interface": "\uf417",
+        "text": "\u2663",
+        "enum": "\uf435",
+        "enumMember": "\uf02b",
+        "module": "\uf530",
+        "color": "\ue22b",
+        "property": "\ue624",
+        "field": "\uf6a6",
+        "unit": "\uf475",
+        "event": "\ufacd",
+        "file": "\uf723",
+        "folder": "\uf114",
+        "snippet": "\ue60b",
+        "typeParameter": "\uf728",
+        "default": "\uf29c"
+    },
+
+    // Git:
+    "git.enableGutters": true,
+    "git.branchCharacter":"\uf408",
+    "git.addGBlameToBufferVar": true,
+    "git.addGBlameToVirtualText": true,
+    // ❯❯❯ ",
+    "git.virtualTextPrefix": "  ",
+    "git.addedSign.hlGroup": "GitGutterAdd",
+    "git.changedSign.hlGroup": "GitGutterChange",
+    "git.removedSign.hlGroup": "GitGutterDelete",
+    "git.topRemovedSign.hlGroup": "GitGutterDelete",
+    "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
+    "git.addedSign.text":"┃",
+    "git.changedSign.text":"┃",
+    "git.removedSign.text":"┃",
+    // 🔥 ☃️ ♻️   
+    "git.topRemovedSign.text": "☃️",
+    "git.changeRemovedSign.text": "┋",
+
+    // Diagnostic: 
+    // 📛
+	// , 🚧 ☢️" ☣️  ⚠️"
+    // 👀, 🔍
+    // Halloween: https://emojipedia.org/halloween/ - 🧚 🎃 👹
+    // Christmas: https://emojipedia.org/christmas/ - ❄️  ✨ 🔥
+    // ☢️
+    "diagnostic.signOffset": 9999999,
+    "diagnostic.displayByAle": false,
+    "diagnostic.refreshOnInsertMode": true,
+	"diagnostic.errorSign": "📛",
+	"diagnostic.warningSign": "🚧",
+    "diagnostic.infoSign": "🐸",
+    "diagnostic.hintSign": "🔍",
+    "diagnostic-languageserver.formatFiletypes": {
+      "dart": "dartfmt"
+    },
+
+    // Prettier:
+    "coc.preferences.formatOnSaveFiletype": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"],
+    "prettier.statusItemText": "ⓟ ",
+    "prettier.eslintIntegration": true,
+    "prettier.tslintIntegration": true,
+    "prettier.stylelintIntegration": true,
+
+    // Eslint
+    "eslint.filetypes": ["javascript", "javascript.jsx", "javascriptreact"],
+    "eslint.autoFix": true,
+    "eslint.autoFixOnSave": true,
+
+    // Emmet
+    "emmet.includeLanguages": {"vue-html": "html", "javascript": "javascriptreact"},
+
+    // Signature
+    "signature.target": "echo",
+
+
+    // Flutter
+    "flutter.trace.server": true,
+    "flutter.lsp.debug": true,
+
+    // Snippet
+    //snippets.userSnippetsDirectory": ["snips"]
+    //"snippets.priority": 100,
+    //"snippets.extends": {
+    //    "cpp": ["c"],
+    //    "javascriptreact": ["javascript"],
+    //    "typescript": ["javascript"]
+    //},
+
+    // Coc-explorer
+    "explorer.icon.expanded": "▾",
+    "explorer.icon.collapsed": "▸",
+    "explorer.width": 30,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.quitOnOpen": true,
+    "explorer.floating.width": -20,
+    "explorer.floating.height": -10,
+    // "explorer.openAction.strategy": "sourceWindow"
+
+    "languageserver": {
+      "lua": {
+        "command": "/home/ecm/Documents/progs/lua-language-server/bin/Linux/lua-language-server",
+        "args": ["-E", "-e", "LANG=\"en\"", "/home/ecm/Documents/progs/lua-language-server/main.lua"],
+        "filetypes": ["lua"],
+        // "rootPatterns": [".git/"],
+        "settings": {
+          "Lua": {
+            "workspace":{
+                "library":{
+                    "/usr/share/nvim/runtime/lua": true,
+                    "/usr/share/nvim/runtime/lua/vim/lsp":true
+                },
+                "maxPreload":2000,
+                "preloadFileSize":1000
+            },
+            "runtime": {
+                "version": "LuaJIT"
+            },
+            "diagnostics": {
+                "enable": true,
+                "globals": [
+                  "hs", "vim", "it", "describe", "before_each", "after_each",
+                  "awesome", "client"
+                ],
+                "disable": ["lowercase-global"]
+            }
+          }
+        }
+      }
+    },
+
+    // "Lua.diagnostics.disable": ["lowercase-global"]
+}

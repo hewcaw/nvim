@@ -1,0 +1,8 @@
+- repo: liuchengxu/vim-which-key
+  on_cmd: ['WhichKey', 'WhichKey!']
+  # nnoremap <silent> <C-w> :<c-u>WhichKey  '<C-w>'<CR>
+  hook_add: |
+    nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+    nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+  hook_source: source $VIM_PATH/lua/plugins/cfg/whichkey.vim
+  # hook_post_source: source $VIM_PATH/lua/plugins/cfg/whichkey.vim

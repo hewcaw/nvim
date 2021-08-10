@@ -1,0 +1,77 @@
+- repo: ayu-theme/ayu-vim
+  hook_post_source: source $VIM_PATH/lua/plugins/vimscripts/ui/ayu.vim
+
+# - repo: bagrat/vim-buffet
+#   rev: refactor
+#   on_event: [ BufReadPre, BufNew ]
+#   hook_source: source $VIM_PATH/codeine/plugins/ui/buffet.vim
+
+# - repo: Akin909/nvim-bufferline.lua
+#   # on_event: [BufReadPre,BufNewFile]
+#   hook_post_source: |
+#     lua << EOF
+#       require'bufferline'.setup {
+#         options = {
+#           view = "multiwindow",
+#           numbers =  "ordinal",
+#           number_style = "",
+#           mappings = true ,
+#           max_name_length = 15,
+#           tab_size = 15,
+#           show_buffer_close_icons = false,
+#           separator_style = "thick",
+#           enforce_regular_tabs = false,
+#         }
+#       }
+#     EOF
+
+- repo: ryanoasis/vim-devicons
+  hook_add: let g:webdevicons_enable_denite = 1
+
+- repo: kyazdani42/nvim-web-devicons
+#   hook_post_source: |
+#     lua << EOF
+#       require'nvim-web-devicons'.setup {
+#         -- your personnal icons can go here (to override)
+#         -- DevIcon will be appended to `name`
+#         override = {
+#           zsh = {
+#             icon = "",
+#             color = "#428850",
+#             name = "Zsh"
+#           }
+#         };
+#         -- globally enable default icons (default to false)
+#         -- will get overriden by `get_icons` option
+#         default = true;
+#       }
+#     EOF
+
+# - repo: Akin909/nvim-bufferline.lua
+#   depends: nvim-web-devicons
+#   hook_add: |
+#     lua << EOF
+#     require'bufferline'.setup{
+#         options = {
+#           modified_icon = '✥',
+#           buffer_close_icon = '',
+#           mappings = true,
+#           always_show_bufferline = false,
+#         };
+#         highlights = {
+#           bufferline_selected = {
+#             gui = "bold",
+#           };
+#         };
+#       }
+#     EOF
+
+- repo: Yggdroot/indentLine
+  on_ft: [html,css,javascript,javascriptreact,typescript,typescriptreact,typescript.tsx,vue,dart]
+  hook_source: source $VIM_PATH/lua/codeine/plugins/vimscripts/ui/indentline.vim
+
+# # TODO: https://github.com/glepnir/nvim/blob/95c366c9b7d9d3162fdf3421062a01f5908e5b1d/modules/enhance.yaml#L5
+- repo: norcalli/nvim-colorizer.lua
+  hook_source: lua require("colorizer").setup()
+
+# - repo: RRethy/vim-hexokinase

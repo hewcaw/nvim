@@ -1,0 +1,76 @@
+## Theme:
+snippet theme "Theme.of(context)." b
+Theme.of(context).
+endsnippet
+
+## Widgets:
+snippet textTheme "Text with Theme" b
+Text(
+  $1,
+  style: Theme.of(context).textTheme$2
+)
+endsnippet
+
+
+## Stateless _______________________________________________________________
+snippet slclass "Stateless class" b
+class ${1:<name>} extends StatelessWidget {
+  $1({
+    Key key,${2}
+  }) : super(key: key);${3}
+
+  @override
+  Widget build(BuildContext context) {
+    return ${4};$0
+  }
+}
+endsnippet
+
+snippet slbmclass "Stateless bare minimum class" b
+class ${1:<name>} extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return ${2:SizedBox()};$0
+  }
+}
+endsnippet
+
+snippet slTestScreen "Stateless test page" b
+import 'package:flutter/material.dart';
+
+class $1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    child: Scaffold(
+      body: Container(
+        child: Center(
+          child: Text(
+            "Test page",
+            style: TextStyle(fontWeight: FontWeight.w900, fontSize: 28),
+          ),
+        ),
+      ),
+    );
+  }
+}
+endsnippet
+
+#### Stateful _______________________________________________________________
+snippet sfjeclass "Stateful just enough class" b
+class ${1} extends StatefulWidget {
+  @override
+  $2 createState() => $2();
+}
+
+class ${2} extends State<$1> {
+  @override
+  Widget build(BuildContext context) {
+    return ${3:Container()};$0
+  }
+}
+endsnippet
+
+snippet assert "Assert snippet" b
+assert(${1} != ${2:null}),$0
+endsnippet

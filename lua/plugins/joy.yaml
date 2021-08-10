@@ -1,0 +1,86 @@
+# http://genkisugimoto.com/blog/manage-vim-plugins-via-yaml/
+- repo: Shougo/dein.vim
+  on_func: dein#
+
+- repo: neoclide/coc.nvim
+  merge: 0
+  rev: release
+  hook_add: source $VIM_PATH/lua/plugins/vimscripts/joy/coc_cfg.vim
+  hook_source: | 
+    source $VIM_PATH/lua/plugins/vimscripts/joy/coc_mappings.vim
+    source $VIM_PATH/lua/plugins/vimscripts/joy/coc_lsp.vim
+
+- repo: honza/vim-snippets
+  depends : coc.nvim
+
+# TODO: I want to use Ultisnips with LSP.
+# - repo: SirVer/ultisnips
+#   hook_source: |
+#       let g:UltiSnipsJumpForwardTrigger="<c-b>"
+#       let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+# Fzf:
+- repo: junegunn/fzf
+  on_source: fzf.vim
+  build: './install --all'
+  merged: 0
+
+- repo: junegunn/fzf.vim
+  depends: fzf
+  on_cmd: [Colors,Rg,Buffers,Vista,Vista!,Vista!!]
+  on_func: Fzf_dev
+  # hook_add: source $VIM_PATH/lua/plugins/fzf/key.vim
+  # hook_source: source $VIM_PATH/plugins/fzf/cfg.vim
+  hook_source: |
+    source $VIM_PATH/lua/plugins/vimscripts/joy/fzf_cfg.vim
+    source $VIM_PATH/lua/plugins/vimscripts/joy/fzf_mappings.vim
+
+# Git:
+# - { repo: taigacute/magit.vim, on_cmd: Magit }
+- repo: lambdalisue/gina.vim
+  on_cmd: Gina
+  hook_add: source $VIM_PATH/lua/plugins/vimscripts/joy/gina_mappings.vim
+
+- repo: chemzqm/vim-easygit
+  on_cmd: [Gcd, Glcd, Gcommit, Gblame, Gstatus, Gdiff, Gbrowse, Gstatus, Gpush]
+  hook_source: let g:easygit_enable_command = 1
+
+# Vista:
+- repo: liuchengxu/vista.vim
+  on_cmd: [Vista,Vista!,Vista!!]
+  hook_source: source $VIM_PATH/lua/plugins/vimscripts/joy/vista_cfg.vim
+
+# Defx (deprecated): {{{
+# - repo: Shougo/defx.nvim
+#   depends: [fzf,fzf.vim]
+#   on_cmd: Defx
+#   hook_source: source  $VIM_PATH/core/configs/defx_cfg.vim
+#
+# - repo: kristijanhusak/defx-git
+#   on_source: defx.nvim
+#   hook_source: source  $VIM_PATH/core/configs/defx-git_cfg.vim
+#
+# - repo: kristijanhusak/defx-icons
+#   on_source: defx.nvim
+# ===== }}}
+
+
+
+
+- repo: easymotion/vim-easymotion
+  on_map: { n: <Plug> }
+  hook_source: source  $VIM_PATH/lua/plugins/vimscripts/joy/easymotion_cfg.vim
+
+- repo: tyru/caw.vim
+  on_map: { nx: <Plug> }
+  hook_add: source  $VIM_PATH/lua/plugins/vimscripts/joy/caw_cfg.vim
+
+- repo: machakann/vim-sandwich/
+  on_map: { vnx: [<Plug>(operator-sandwich-,<Plug>(textobj-sandwich-]}
+
+- repo: godlygeek/tabular
+  on_cmd: [Tabularize]
+
+- repo: sbdchd/neoformat
+  on_cmd: [Neoformat,Neoformat!]
+  hook_source: source  $VIM_PATH/lua/plugins/vimscripts/joy/neoformat_cfg.vim

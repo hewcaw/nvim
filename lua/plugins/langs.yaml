@@ -1,0 +1,39 @@
+# - repo: rafcamlet/coc-nvim-lua
+  #hook_add: let g:buffet_use_devicons = 1
+  #hook_add: source $VIM_PATH/core/ui/buffet.vim
+- repo: vim-syntastic/syntastic
+- repo: cespare/vim-toml
+  on_ft: toml
+# - repo: vim-syntastic/syntastic
+# - repo: tbastos/vim-lua
+
+- repo: iamcco/markdown-preview.nvim
+  on_ft: [markdown,pandoc.markdown,rmd]
+  hook_post_source: 'call mkdp#util#install()'
+  hook_source: |
+      let g:mkdp_auto_close = 0
+
+- repo: hail2u/vim-css3-syntax
+  on_ft: [css,scss,vue]
+
+# React:
+# - { repo: suy/vim-context-commentstring, on_ft: [javascriptreact, typescriptreact] }
+# - { repo: leafgarland/typescript-vim, on_ft: [typescript, typescriptreact] }
+# - { repo: peitalin/vim-jsx-typescript, on_ft: [typescriptreact] }
+# - { repo: chemzqm/vim-jsx-improve, on_ft: [javascript, javascriptreact] }
+- { repo: yuezk/vim-js, on_ft: [javascript, javascriptreact, typescript, typescriptreact] }
+- { repo: maxmellon/vim-jsx-pretty, on_ft: [javascriptreact, typescriptreact] }
+- { repo: HerringtonDarkholme/yats.vim, on_ft: [typescript, typescriptreact] }
+- { repo: styled-components/vim-styled-components, on_ft: [javascriptreact, typescriptreact] }
+
+# Flutter/Dart:
+# - repo: thosakwe/vim-flutter
+#   on_cmd: [FlutterRun]
+- repo: dart-lang/dart-vim-plugin
+  on_ft: [dart]
+
+- repo: tbastos/vim-lua
+  on_ft: [lua]
+
+- repo: rust-lang/rust.vim
+  on_ft: [rust]

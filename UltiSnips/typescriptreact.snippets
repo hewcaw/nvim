@@ -1,0 +1,63 @@
+extends javascriptreact
+
+# Js general ================================================================
+snippet imp "Import {} from '';" b
+import {$2} from '$1';$0
+endsnippet
+
+# Hooks (Functional component) ==============================================
+snippet rfcv "React Functional Component View" b
+import * as React from 'react';$1
+
+
+
+export const ${6:`!v expand('%:t:r')`}: React.FC = () => {
+	return (
+		${7:VISUAL}$0
+	);
+}
+endsnippet
+
+snippet ruState "React useState()" b
+const [${1:<Text>}, set${2:}] = useState${3:<Type>}(${4:VISUAL});$0
+endsnippet
+
+## Hooks with Typescript -----
+snippet rtcu "React typescript const use<Name>" b
+const {${2:VISUAL}} = $1;$0
+endsnippet
+
+snippet rtfc "React typescript Functional Component" b
+import * as React from 'react';
+
+
+
+export interface ${1:`!v expand('%:t:r')`}Props { 
+  ${2:VISUAL}
+}
+
+${3:export interface ${4:`!v expand('%:t:r')`}States { 
+  ${5:VISUAL}
+}
+}
+
+export const ${6:`!v expand('%:t:r')`}: React.FC<$1Props> = (props) => {
+	return (
+		${7:VISUAL}$0
+	);
+}
+endsnippet
+
+
+# Styled-components =========================================================
+snippet rsexport "React styled-component export const" b
+export const ${1:VISUAL} = styled.${2:TAG}\`
+  ${3:VISUAL};$0
+\`;
+endsnippet
+
+snippet rsbtn "React styled-component button" b
+export const ${1:VISUAL}Btn = styled.button\`
+  ${2:VISUAL};$0
+\`;
+endsnippet

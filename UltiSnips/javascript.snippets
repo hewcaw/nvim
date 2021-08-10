@@ -1,0 +1,68 @@
+# Import
+snippet imp "From module import .." b
+import ${2:VISUAL} from '$1';$0
+endsnippet
+
+# Export
+snippet exp "From module export .." b
+export {$1} from './$1/$1';$0
+endsnippet
+
+
+
+# React Native ================================================================
+snippet rnc "React native component" b
+import React$1 from 'react';
+import {StyleSheet${3:, $2}} from 'react-native';$4
+
+
+
+export const ${5:`!v expand('%:t:r')`} = (props) => {
+  const {
+    children,
+    ...Props
+  } = props;
+
+  const $5Styles = [
+    styles.defaultStyle
+  ];
+
+  return (
+  <$2 style={$5Styles}>
+    {children}
+  </$2>
+  );
+};
+
+
+const styles = StyleSheet.create({
+  defaultStyle: {
+  },
+});$0
+endsnippet
+
+snippet rns "React native component" b
+import React$1 from 'react';
+import {StyleSheet${3:,View,Text$2}} from 'react-native';$4
+
+
+
+export const ${5:`!v expand('%:t:r')`} = () => {
+  const render$6 = () => (
+    <Text>Text</Text>
+  );
+
+  return (
+    <View style={styles.wrapper}>
+      {render$6()}
+    </View>
+  );
+};
+
+
+const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+  },
+});$0
+endsnippet
